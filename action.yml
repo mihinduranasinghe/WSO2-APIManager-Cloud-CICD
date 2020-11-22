@@ -1,0 +1,54 @@
+name: "WSO2 API Manager Cloud CICD"
+author: "mihinduranasinghe"
+description: "This action can be used to run apimcli ccommands."
+
+inputs:
+  usernameDevTenant:
+    description: "Development Tenant Username"
+    required: true
+
+  passwordDevTenant:
+    description: "APICloud Dev Tenant Password"
+    required: true
+
+  usernameProdTenant:
+    description: "Production Tenant Username"
+    required: true
+
+  passwordProdTenant:
+    description: "APICloud Prod Tenant Password"
+    required: true
+
+  APIProjectName:
+    description: "API Project Name"
+    required: true
+
+  OASJsonFilePath:
+    description: "OAS Json File Path to create API"
+    required: true
+
+  APIDefinitionFilePath:
+    description: "API Definition .yml File Path to create API"
+    required: true
+
+  APIVersion:
+    description: "API Version"
+    required: true
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    # - inputToArg$1 # This can be added dynamically like below. It will be get as an input to entryppoint.sh
+    - ${{inputs.usernameDevTenant}}
+    - ${{inputs.passwordDevTenant}}
+    - ${{inputs.usernameProdTenant}}
+    - ${{inputs.passwordProdTenant}}
+    - ${{inputs.APIProjectName}}
+    - ${{inputs.OASJsonFilePath}}
+    - ${{inputs.APIDefinitionFilePath}}
+    - ${{inputs.APIVersion}}
+
+branding:
+  icon: "check-square"
+  color: "green"
