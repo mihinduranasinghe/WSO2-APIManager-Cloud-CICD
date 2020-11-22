@@ -1,4 +1,4 @@
-name: "WSO2 API Manager Cloud CICD"
+name: "wso2 apimcli"
 author: "mihinduranasinghe"
 description: "This action can be used to run apimcli ccommands."
 
@@ -35,6 +35,10 @@ inputs:
     description: "API Version"
     required: true
 
+  PostmanCollectionTestFile:
+    description: "API Version"
+    required: true
+
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -48,6 +52,7 @@ runs:
     - ${{inputs.OASJsonFilePath}}
     - ${{inputs.APIDefinitionFilePath}}
     - ${{inputs.APIVersion}}
+    - ${{inputs.PostmanCollectionTestFile}}
 
 branding:
   icon: "check-square"

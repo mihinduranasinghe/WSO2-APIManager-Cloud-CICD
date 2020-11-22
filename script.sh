@@ -1,6 +1,5 @@
 #!/bin/sh -l
 
-# Environment Variables
 
     # $1 - usernameDevTenant
     # $2 - passwordDevTenant
@@ -10,6 +9,7 @@
     # $6 - OASJsonFilePath
     # $7 - APIDefinitionFilePath
     # $8 - APIVersion
+    # $9 - PostmanCollectionTestFile
 
 echo "::group::WSO2 APIMCLI Version"
     apimcli version
@@ -38,9 +38,9 @@ apimcli list envs
 echo "::end-group"
 
 echo "::group::Init API iproject with given API definition"
-    # apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose
-    # apimcli init SampleStore --oas petstore.json --definition api_template.yaml
-    apimcli init $5 --oas $6 --definition $7
+# apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose
+# apimcli init SampleStore --oas petstore.json --definition api_template.yaml
+apimcli init $5 --oas $6 --definition $7
 echo "::end-group"
 
 echo "::group::Push API project into the GIT repo from VM"
@@ -55,7 +55,7 @@ echo "::end-group"
 apimcli login wso2apicloud -u $1 -p $2 -k
 
     echo "::group::Import API project to Dev Tenant"
-    apimcli import-api -f $GITHUB_WORKSPACE/$5 -e wso2apicloud --preserve-provider=false --update --verbose -k
+    apimcli import-api -f $5 -e wso2apicloud --preserve-provider=false --update --verbose -k
     # apimcli logout wso2apicloud 
     echo "::end-group"
 
@@ -65,6 +65,9 @@ apimcli login wso2apicloud -u $1 -p $2 -k
     apimcli list apis -e wso2apicloud -k
     echo "::end-group"
 
+    echo "::group::Testing With Postman Collection"
+    newman run $9 --insecure
+    echo "::end-group"
 
     echo "::group::Export API from Dev Tenant"
     # apimcli export-api -n <API-name> -v <version> -r <provider> -e <environment> -u <username> -p <password> -k
@@ -92,7 +95,7 @@ apimcli login wso2apicloud -u $3 -p $4 -k
     # apimcli list apis --environment <environment> --insecure
     apimcli list apis -e wso2apicloud -k
     echo "::end-group"
-
+                                    
 apimcli logout wso2apicloud 
 
 
