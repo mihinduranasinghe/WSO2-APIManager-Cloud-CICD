@@ -17,6 +17,7 @@ If all checks passed, API project can be exported from the development tenant to
 6. Replace the example input values with your details.
 7. Values for the "passwordDevTenant" & "passwordProdTenant" must be stored in github repo secrets and use them as ${{secrets.SECRETPASSWORD}} both places
 8. Push it into the main branch
+9. go to the action section in the repo to see the CICD pipeline working
 
 ## Inputs
 
