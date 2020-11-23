@@ -9,13 +9,13 @@ If all checks passed, API project can be exported from the development tenant to
 
 ## Pre requesits
 
-1.Create a github repository
-2.Stage the API Definition file , OAS Json file and Postman Collection file into the local repository
-3.Create a folder named ".github" in the root of the repository
-4.Create a folder named "workflows" inside the ".github" folder.
-5.Create a .yml file with any name , inside the "workflow" folder and you need to code as following example in that yml file
-6.Replace the example input values with your details.
-7.Values for the "passwordDevTenant" & "passwordProdTenant" must be stored in github repo secrets and use them as ${{secrets.SECRETPASSWORD}} both places
+1. Create a github repository
+2. Stage the API Definition file , OAS Json file and Postman Collection file into the local repository
+3. Create a folder named ".github" in the root of the repository
+4. Create a folder named "workflows" inside the ".github" folder.
+5. Create a .yml file with any name , inside the "workflow" folder and you need to code as following example in that yml file
+6. Replace the example input values with your details.
+7. Values for the "passwordDevTenant" & "passwordProdTenant" must be stored in github repo secrets and use them as ${{secrets.SECRETPASSWORD}} both places
 
 ## Inputs
 
