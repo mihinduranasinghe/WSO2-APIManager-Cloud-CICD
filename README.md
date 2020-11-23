@@ -27,7 +27,7 @@ If all checks passed, API project can be exported from the development tenant to
 
 **Required** Dev tenant user's password should be stored in github repo secrets and use it here like ${{secrets.PASSWORD}}
 
-### `usernameDevTenant`
+### `usernameProdTenant`
 
 **Required** Prod tenant username as username@organization.com@ProdtenantName
 
