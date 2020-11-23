@@ -16,6 +16,7 @@ If all checks passed, API project can be exported from the development tenant to
 5. Create a .yml file with any name , inside the "workflow" folder and you need to code as following example in that yml file
 6. Replace the example input values with your details.
 7. Values for the "passwordDevTenant" & "passwordProdTenant" must be stored in github repo secrets and use them as ${{secrets.SECRETPASSWORD}} both places
+8. Push it into the main branch
 
 ## Inputs
 
