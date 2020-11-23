@@ -1,4 +1,4 @@
-# Github Issue Action
+# WSO2 APIManager Cloud CICD Action
 
 This action allows WSO2 API Manager Cloud users to automate CICD
 
