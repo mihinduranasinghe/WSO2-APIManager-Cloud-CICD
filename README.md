@@ -4,7 +4,7 @@ This action allows WSO2 API Manager Cloud users to automate CICD
 
 ## Author
 
-Mihindu Ranasinghe <br/>
+<b>Mihindu Ranasinghe</b> <br/>
 <i>Trainee Software Engineer - WSO2 </i><br/>
 <i>API Manager Cloud Team</i>
 
