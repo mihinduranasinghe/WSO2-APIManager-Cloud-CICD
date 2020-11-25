@@ -2,6 +2,12 @@
 
 This action allows WSO2 API Manager Cloud users to automate CICD
 
+## Author
+
+- Mihindu Ranasinghe
+- Trainee Software Engineer - WSO2
+- API Manager Cloud Team
+
 ## How this works
 
 In this version of APIMCloud CICD Action, you can automate creating an API project with given API definition and publish it in the development tenant. Then it can be tested with a postman collections.
