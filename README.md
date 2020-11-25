@@ -75,6 +75,9 @@ jobs:
   apim-cloud-cicd:
     runs-on: ubuntu-latest
     steps:
+      - name: Cloning repo into VM
+        uses: actions/checkout@v2.3.4
+
       - name: APIM Cloud CICD Public Action
         uses: mihinduranasinghe/WSO2-APIManager-Cloud-CICD@v1.2.0
         id: apim
